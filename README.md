@@ -1,1 +1,1 @@
-# swapi_server
+# Apollo GraphQL API Server
