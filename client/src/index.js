@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./css/style.css"
 import App from "./App";
 import { client } from "./client";
-// import { ApolloProvider } from '@apollo/client'
 import { ApolloProvider } from "@apollo/client/react";
 import reportWebVitals from "./reportWebVitals";
 

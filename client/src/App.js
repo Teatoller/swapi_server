@@ -1,4 +1,4 @@
-import "./App.css";
+import "./css/style.css";
 import { useQuery, gql } from "@apollo/client";
 
 const PEOPLE_RESULTS = gql`
@@ -15,7 +15,6 @@ const PEOPLE_RESULTS = gql`
 
 function App() {
   const { loading, error, data } = useQuery(PEOPLE_RESULTS);
-  console.log("bling bling...", data);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -23,34 +22,37 @@ function App() {
   const stars = data.results.map((item, index) => {
     return (
       <tr key={item.id}>
-        <td>{index + 1}</td>
-        <td>{item.name}</td>
-        <td>{item.height}</td>
-        <td>{item.mass}</td>
-        <td>{item.gender}</td>
-        <td>{item.homeworld}</td>
+        <td className="peopledata text-center">{index + 1}</td>
+        <td className="peopledata text-center">{item.name}</td>
+        <td className="peopledata text-center">{item.height}</td>
+        <td className="peopledata text-center">{item.mass}</td>
+        <td className="peopledata text-center">{item.gender}</td>
+        <td className="peopledata text-center">{item.homeworld}</td>
       </tr>
     );
   });
   return (
     <>
-      <div>
-        <h5>Star Wars</h5>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>id</th>
-                <th scope="col">Name</th>
-                <th scope="col">height</th>
-                <th scope="col">Mass</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Homeworld</th>
-              </tr>
-            </thead>
-            <tbody>{stars}</tbody>
-          </table>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <h5 className="text-secondary h6">Star Wars</h5>
+            <div className="table-responsive">
+              <table className="table table-sm table-md table-striped table-hover table-bordered text-secondary">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">height</th>
+                    <th scope="col">Mass</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Homeworld</th>
+                  </tr>
+                </thead>
+                <tbody>{stars}</tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </>
