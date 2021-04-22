@@ -1,6 +1,7 @@
 import "../css/style.css";
 import { useQuery, gql } from "@apollo/client";
-import HomeNav from "./Navbar/HomeNav";
+import HomeNav from "./common/HomeNav";
+import Footer from "./common/Footer";
 
 const PEOPLE_RESULTS = gql`
   query GetPeopleResults {
@@ -15,6 +16,10 @@ const PEOPLE_RESULTS = gql`
 `;
 
 const Home = (props) => {
+  // const [activePage, setActivePage] = useState(1);
+  // const [itemCountPerPage] = useState(10);
+  // const [errors, setErrors] = useState("");
+  // const [message, setMessage] = useState("");
   const { loading, error, data } = useQuery(PEOPLE_RESULTS);
 
   if (loading) return <p>Loading...</p>;
@@ -27,6 +32,14 @@ const Home = (props) => {
     const attribute = e.currentTarget;
     const starName = attribute.getAttribute("starName");
     localStorage.setItem("starName", starName);
+    const starHeight = attribute.getAttribute("starHeight");
+    localStorage.setItem("starHeight", starHeight);
+    const starMass = attribute.getAttribute("starMass");
+    localStorage.setItem("starMass", starMass);
+    const starGender = attribute.getAttribute("starGender");
+    localStorage.setItem("starGender", starGender);
+    const starhomeworld = attribute.getAttribute("starhomeworld");
+    localStorage.setItem("starhomeworld", starhomeworld);
 
     history.push("/stardetail");
   };
@@ -45,7 +58,10 @@ const Home = (props) => {
             className="btn btn-sm btn-primary"
             type="button"
             starName={item.name}
-            coLocation={item.location}
+            starHeight={item.height}
+            starMass={item.mass}
+            starGender={item.gender}
+            starhomeworld={item.homeworld}
             onClick={handleDetailView}
           >
             View
@@ -54,6 +70,18 @@ const Home = (props) => {
       </tr>
     );
   });
+
+  // Get current items
+  // const indexOfLastItem = activePage * itemCountPerPage;
+  // const indexOfFirstItem = indexOfLastItem - itemCountPerPage;
+  // const currentItems = companyAdminStaff.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Change page
+
+  // const paginate = pageNumber => {
+  //   setActivePage(pageNumber);
+  // };
+
   return (
     <>
       <HomeNav />
@@ -67,7 +95,7 @@ const Home = (props) => {
                   <tr>
                     <th>#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">height</th>
+                    <th scope="col">Height</th>
                     <th scope="col">Mass</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Homeworld</th>
@@ -80,6 +108,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
