@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 import HomeNav from "./common/HomeNav";
 import Footer from "./common/Footer";
 import Pagination from "./common/Pagination";
+import SwapiMenu from "./common/SwapiMenu";
 
 const PEOPLE_RESULTS = gql`
   query GetPeopleResults {
@@ -21,6 +22,12 @@ const Home = (props) => {
   const [activePage, setActivePage] = useState(1);
   const [itemCountPerPage] = useState(7);
   const { loading, error, data } = useQuery(PEOPLE_RESULTS);
+  const [search, setSearch] = useState("");
+
+  const searchSpace = (event) => {
+    const keyword = event.target.value;
+    setSearch(keyword);
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -44,32 +51,39 @@ const Home = (props) => {
     history.push("/stardetail");
   };
 
-  const stars = data.results.map((item, index) => {
-    return (
-      <tr key={item.id}>
-        <td className="peopledata text-center">{index + 1}</td>
-        <td className="peopledata text-center">{item.name}</td>
-        <td className="peopledata text-center">{item.height}</td>
-        <td className="peopledata text-center">{item.mass}</td>
-        <td className="peopledata text-center">{item.gender}</td>
-        <td className="peopledata text-center">{item.homeworld}</td>
-        <td className="peopledata text-center">
-          <button
-            className="btn btn-sm btn-primary"
-            type="button"
-            starName={item.name}
-            starHeight={item.height}
-            starMass={item.mass}
-            starGender={item.gender}
-            starhomeworld={item.homeworld}
-            onClick={handleDetailView}
-          >
-            View
-          </button>
-        </td>
-      </tr>
-    );
-  });
+  const stars = data.results
+    .filter((data) => {
+      if (search == null) return data;
+      if (data.name.toLowerCase().includes(search.toLowerCase())) {
+        return data;
+      }
+    })
+    .map((item, index) => {
+      return (
+        <tr key={item.id}>
+          <td className="peopledata text-center">{index + 1}</td>
+          <td className="peopledata text-center">{item.name}</td>
+          <td className="peopledata text-center">{item.height}</td>
+          <td className="peopledata text-center">{item.mass}</td>
+          <td className="peopledata text-center">{item.gender}</td>
+          <td className="peopledata text-center">{item.homeworld}</td>
+          <td className="peopledata text-center">
+            <button
+              className="btn btn-sm btn-primary"
+              type="button"
+              starName={item.name}
+              starHeight={item.height}
+              starMass={item.mass}
+              starGender={item.gender}
+              starhomeworld={item.homeworld}
+              onClick={handleDetailView}
+            >
+              View
+            </button>
+          </td>
+        </tr>
+      );
+    });
 
   // Get current items
   const indexOfLastItem = activePage * itemCountPerPage;
@@ -88,7 +102,11 @@ const Home = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-sm">
-            <h5 className="text-secondary h6">Star Wars</h5>
+            <h1 className="text-secondary">Star Wars</h1>
+            <div className="mb-1">
+              <SwapiMenu searchSpace={searchSpace} />
+            </div>
+
             <div className="table-responsive">
               <table className="table table-sm table-md table-striped table-hover table-bordered text-secondary">
                 <thead>
