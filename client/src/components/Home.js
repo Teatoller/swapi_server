@@ -1,7 +1,9 @@
+import React, { useState } from "react";
 import "../css/style.css";
 import { useQuery, gql } from "@apollo/client";
 import HomeNav from "./common/HomeNav";
 import Footer from "./common/Footer";
+import Pagination from "./common/Pagination";
 
 const PEOPLE_RESULTS = gql`
   query GetPeopleResults {
@@ -16,10 +18,8 @@ const PEOPLE_RESULTS = gql`
 `;
 
 const Home = (props) => {
-  // const [activePage, setActivePage] = useState(1);
-  // const [itemCountPerPage] = useState(10);
-  // const [errors, setErrors] = useState("");
-  // const [message, setMessage] = useState("");
+  const [activePage, setActivePage] = useState(1);
+  const [itemCountPerPage] = useState(7);
   const { loading, error, data } = useQuery(PEOPLE_RESULTS);
 
   if (loading) return <p>Loading...</p>;
@@ -72,15 +72,15 @@ const Home = (props) => {
   });
 
   // Get current items
-  // const indexOfLastItem = activePage * itemCountPerPage;
-  // const indexOfFirstItem = indexOfLastItem - itemCountPerPage;
-  // const currentItems = companyAdminStaff.slice(indexOfFirstItem, indexOfLastItem);
+  const indexOfLastItem = activePage * itemCountPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemCountPerPage;
+  const currentItems = stars.slice(indexOfFirstItem, indexOfLastItem);
 
   // Change page
 
-  // const paginate = pageNumber => {
-  //   setActivePage(pageNumber);
-  // };
+  const paginate = (pageNumber) => {
+    setActivePage(pageNumber);
+  };
 
   return (
     <>
@@ -102,13 +102,18 @@ const Home = (props) => {
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody>{stars}</tbody>
+                <tbody>{currentItems}</tbody>
               </table>
             </div>
           </div>
         </div>
+        <Pagination
+          itemCountPerPage={itemCountPerPage}
+          totalItems={stars.length}
+          paginate={paginate}
+        />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
