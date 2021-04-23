@@ -1,0 +1,25 @@
+{ count: 82,
+  next: 'http://swapi.dev/api/people/?page=2',
+  previous: null,
+  results:
+   [ { name: 'Luke Skywalker',
+       height: '172',
+       mass: '77',
+       gender: 'male',
+       homeworld: 'http://swapi.dev/api/planets/1/',
+ ] }
+
+
+ {
+  id: people.id || 0,
+  page: page,
+  next: people.next,
+  previous: null,
+  allResults:{
+    name: people.results[0].name,
+    height: people.results[0].height,
+    mass: people.results[0].mass,
+    gender: people.results[0].gender,
+    homeworld: people.results[0].homeworld,
+  }
+ }
