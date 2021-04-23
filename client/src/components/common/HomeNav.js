@@ -1,23 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../../css/style.css";
 
 const activeStyle = { color: "#f0a243" };
 const logoUrl = `./img/swapi.svg`;
 
 export const HomeNav = () => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-expand-lg navbar-light navshade">
+    <nav className="navbar navbar-expand-sm navbar-expand-lg navbar-light navshade border-bottom border-warning">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
           <img
             src={logoUrl}
-            width="30"
-            height="30"
-            className="d-inline-block align-top p-1"
+            className="d-inline-block align-top p-1 bg-warning nav-img"
             alt=""
             loading="lazy"
           />
-          <span className="font-weight-bold text-secondary">Swapi</span>
+          <span className="font-weight-bold text-warning p-3">Swapi</span>
         </NavLink>
         <button
           className="navbar-toggler navbar-toggler-right"
@@ -35,7 +34,7 @@ export const HomeNav = () => {
           <ul className="navbar-nav text-capitalize ml-auto">
             <li className="nav-item active">
               <NavLink className="nav-link" activeStyle={activeStyle} to="/">
-                Home
+              <i class="bi bi-house-door"  aria-label="Home"> Home</i>
                 <span className="sr-only">(current)</span>
               </NavLink>
             </li>
