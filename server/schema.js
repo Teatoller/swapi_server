@@ -3,17 +3,16 @@ const { gql } = require("apollo-server");
 const typeDefs = gql`
   # This "results" type defines the queryable fields for every star wars api in our data source.
   type People {
-    count:Int!
-    id: ID!
+    count: Int!
     page: String!
     next: String!
     previous: String
-    allResults: AllResults!
+    allResults: [AllResults]!
   }
   type AllResults {
     name: String!
-    height: Int!
-    mass: Int!
+    height: Int
+    mass: String
     gender: String!
     homeworld: String!
   }
@@ -24,16 +23,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-// type results {
-//   name: String!
-//   height: Int!
-//   mass: Int!
-//   gender: String!
-//   homeworld: String!
-// }
-
-// # queries
-// type Query {
-//   results: [results]
-// }
