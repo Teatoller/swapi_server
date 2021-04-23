@@ -6,16 +6,19 @@ class SwapiAPI extends RESTDataSource {
     this.baseURL = "https://swapi.dev/api/";
   }
 
-  async getPeople(id) {
-    return this.get(`people/${id}`);
+  async getPeople({ page }) {
+    const response = await this.get(`people/?page=${page}`);
+    return this.peopleReducer(response, page);
   }
 
-  async getPeople(limit = 10) {
-    const data = await this.get("people", {
-      per_page: limit,
-      order_by: "name",
-    });
-    return data.results;
+  peopleReducer(people, page) {
+    return {
+      count: 82,
+      page: page,
+      next: people.next,
+      previous: people.previous,
+      allResults: people.results,
+    };
   }
 }
 module.exports = SwapiAPI;

@@ -2,6 +2,14 @@
 
 - This a server application that fetches data from the "Star Wars API.
 
+## Prerequisites
+
+-Before we begin, make sure you have the following installed:
+
+- node.js v8.x or later
+- npm v6.x or later
+- git v2.14.1 or later
+
 ## How to test the application
 
 ### Server
