@@ -3,7 +3,6 @@ const { gql } = require("apollo-server");
 const typeDefs = gql`
   # This "results" type defines the queryable fields for every star wars api in our data source.
   type People {
-    count: Int!
     page: String!
     next: String!
     previous: String
