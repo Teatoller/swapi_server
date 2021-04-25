@@ -1,15 +1,11 @@
-const { ApolloServer } = require("apollo-server");
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
 const typeDefs = require("./schema");
-
-// Resolvers define the technique for fetching the types defined in the
-// schema.
 const resolvers = require("./resolver");
-
 const SwapiAPI = require("./datasource");
+const path = require("path");
 
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
-
+const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -20,7 +16,14 @@ const server = new ApolloServer({
   },
 });
 
-// The `listen` method launches a web server.
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+server.applyMiddleware({ app });
+
+app.use(express.static("public"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
+
+app.listen({ port: 4000 }, () =>
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+);
