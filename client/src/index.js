@@ -9,8 +9,11 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
   // options go here
-  uri: "https://swapi-stars.herokuapp.com/",
-  // uri: "http://localhost:4000",
+  // local development url
+  // uri: "http://localhost:4000/graphql",
+
+  // production environment url extension
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
