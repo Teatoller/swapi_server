@@ -3,7 +3,6 @@ import Footer from "./common/Footer";
 import HomeNav from "./common/HomeNav";
 
 export const StarDetails = () => {
-  const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [mass, setMass] = useState("");
   const [height, setHeight] = useState("");
@@ -22,7 +21,6 @@ export const StarDetails = () => {
     setMass(starMass);
     setGender(starGender);
     setHomeworld(starhomeworld);
-    // setLoading(false);
   };
 
   useEffect(() => {
@@ -85,7 +83,9 @@ export const StarDetails = () => {
             Homeworld:
           </div>
           <div className="col py-3 px-lg-5 border bg-light">
-            {homeworld}
+          <a href={homeworld} target="_blank" rel="noreferrer">
+              {homeworld}
+            </a>
           </div>
         </div>
       </div>

@@ -11,9 +11,12 @@ class SwapiAPI extends RESTDataSource {
     return this.peopleReducer(response, page);
   }
 
+  getAllResults() {
+    return this.get("results");
+  }
+
   peopleReducer(people, page) {
     return {
-      count: 82,
       page: page,
       next: people.next,
       previous: people.previous,

@@ -1,6 +1,6 @@
-body{
-    margin: 0;
-    padding: auto;
+body {
+  margin: 0;
+  padding: auto;
 }
 
 .navshade {
@@ -8,8 +8,19 @@ body{
 }
 
 .nav-img {
-  height: 20px;
-  width: 20px;
+  border-radius: 30px;
+  font-size: 6px;
+  height: 52px;
+  margin: 0px;
+  padding: 4px;
+  width: 52px;
+}
+
+span.page-align {
+  align-items: center;
+  display: inline;
+  /* margin: 4px; */
+  /* padding: 4px; */
 }
 
 #footer {
@@ -18,10 +29,7 @@ body{
   left: 0;
   right: 0;
   height: 30px;
-  background-color: #f8f9fa;
-  border-top: solid 2px lightgray;
-  border-bottom: solid 2px lightgray;
-  color: gray;
+  background-color: #f0f0f0;
   outline: none;
   width: 100%;
 }
@@ -38,6 +46,11 @@ td.peopledata {
 
   .columns {
     width: 100%;
+  }
+
+  .homeworld {
+    font-size: xx-small;
+    text-align: left;
   }
   /* Force table to not be like tables anymore */
 
