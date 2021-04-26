@@ -9,15 +9,6 @@ const Pagination = ({
   return (
     <>
       <nav aria-label="Page navigation">
-        {/* <ul className="pagination pagination-sm justify-content-center">
-          {pageNumbers.map(number => (
-            <li key={number} className="page-item">
-              <Link onClick={() => paginate(number)} href="!#" className="page-link">
-                {number}
-              </Link>
-            </li>
-          ))}
-        </ul> */}
         <ul className="pagination pagination-sm justify-content-center">
           <li className="page-item">
             <button
