@@ -2,6 +2,14 @@
 
 - This a server application that fetches data from the "Star Wars API.
 
+- The application may be view at [Swapi-App](https://yeuxx.csb.app/)
+
+## Application can be view on codesandbox 
+
+1. [Pivotal Tracker board](https://www.pivotaltracker.com/projects/2496277)
+2. [CodeSandbox frontend](https://codesandbox.io/s/swapi-frontstevenennis-yeuxx)
+3. [CodeSanbox server](https://codesandbox.io/s/swapi-serverstevenennis-zll44)
+
 ## Prerequisites
 
 -Before we begin, make sure you have the following installed:
