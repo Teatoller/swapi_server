@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "../components/Home";
-import StarDetails from "../components/StarDetails";
+import Home from "../components/Home/Home";
+import StarDetails from "../components/StarDetail/StarDetails";
 
 export const SwapiRouter = () => {
   return (
