@@ -5,6 +5,7 @@ import HomeNav from "./common/HomeNav";
 import Footer from "./common/Footer";
 import Pagination from "./common/Pagination";
 import SwapiMenu from "./common/SwapiMenu";
+import Error from "../errorHandling/Error";
 
 export const PEOPLE = gql`
   query getPeople($page: String!) {
@@ -72,7 +73,6 @@ const Home = (props) => {
         console.log("Page does not exist.");
     }
   };
-  console.log("cling cling", page);
 
   const handlePreviousPageChange = (e) => {
     e.preventDefault();
@@ -112,7 +112,7 @@ const Home = (props) => {
   };
 
   if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Error error={error} />;
 
   const handleDetailView = (e) => {
     const { history } = props;

@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import ErrorBoundary from "./errorHandling/ErrorBoundary";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
@@ -14,11 +15,13 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <React.StrictMode>
-      <Router>
-        <App />
-      </Router>
-    </React.StrictMode>
+    <ErrorBoundary>
+      <React.StrictMode>
+        <Router>
+          <App />
+        </Router>
+      </React.StrictMode>
+    </ErrorBoundary>
   </ApolloProvider>,
   document.getElementById("root")
 );
