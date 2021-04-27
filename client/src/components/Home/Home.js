@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "../css/style.css";
+import "../../css/style.css";
 import { useQuery, gql } from "@apollo/client";
-import HomeNav from "./common/HomeNav";
-import Footer from "./common/Footer";
-import Pagination from "./common/Pagination";
-import SwapiMenu from "./common/SwapiMenu";
-import Error from "../errorHandling/Error";
-import Spinner from "./spinner/Spinner";
+import HomeNav from "../common/HomeNav";
+import Footer from "../common/Footer";
+import Pagination from "../common/Pagination";
+
+import Error from "../../errorHandling/Error";
+import Spinner from "../Spinner/Spinner";
+import HomeView from "./HomeView/HomeView";
 
 export const PEOPLE = gql`
   query getPeople($page: String!) {
@@ -52,7 +53,7 @@ const Home = (props) => {
         setPage(nextPageStr);
         break;
       case "3":
-        let newNextPage = (parseInt(nextPageStr) + 1).toString();
+        let newNextPage = (parseInt(nextPageStr, 10) + 1).toString();
         setPage(newNextPage);
         break;
       case "4":
@@ -89,7 +90,7 @@ const Home = (props) => {
         setPage(previousPageStr);
         break;
       case "3":
-        let newPreviousPage = (parseInt(previousPageStr) - 1).toString();
+        let newPreviousPage = (parseInt(previousPageStr, 10) - 1).toString();
         setPage(newPreviousPage);
         break;
       case "4":
@@ -176,31 +177,7 @@ const Home = (props) => {
     <>
       <HomeNav />
       <div className="container">
-        <div className="row">
-          <div className="col-sm">
-            <h6 className="text-secondary m-0">Star Wars People</h6>
-            <div className="mb-1">
-              <SwapiMenu searchSpace={searchSpace} />
-            </div>
-
-            <div className="table-responsive">
-              <table className="table table-sm table-md table-striped table-hover table-bordered text-secondary mb-0">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Height</th>
-                    <th scope="col">Mass</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Homeworld</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>{stars}</tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <HomeView stars={stars} searchSpace={searchSpace} />
         <Pagination
           page={page}
           handleNextPageChange={handleNextPageChange}

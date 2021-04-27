@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminDisplay snapshot renders correctly 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-sm"
+  >
+    <h6
+      className="text-secondary m-0"
+    >
+      Star Wars People
+    </h6>
+    <div
+      className="mb-1"
+    >
+      <div
+        className="d-inline p-2 bg-light text-white"
+      >
+        <input
+          className="border border-info rounded w-25 text-muted text-center"
+          onChange={[Function]}
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="table-responsive"
+    >
+      <table
+        className="table table-sm table-md table-striped table-hover table-bordered text-secondary mb-0"
+      >
+        <thead>
+          <tr>
+            <th>
+              #
+            </th>
+            <th
+              scope="col"
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+            >
+              Height
+            </th>
+            <th
+              scope="col"
+            >
+              Mass
+            </th>
+            <th
+              scope="col"
+            >
+              Gender
+            </th>
+            <th
+              scope="col"
+            >
+              Homeworld
+            </th>
+            <th
+              scope="col"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </div>
+</div>
+`;
