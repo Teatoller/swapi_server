@@ -6,6 +6,7 @@ import Footer from "./common/Footer";
 import Pagination from "./common/Pagination";
 import SwapiMenu from "./common/SwapiMenu";
 import Error from "../errorHandling/Error";
+import Spinner from "./spinner/Spinner";
 
 export const PEOPLE = gql`
   query getPeople($page: String!) {
@@ -107,11 +108,11 @@ const Home = (props) => {
         setPage(previousPageStr);
         break;
       default:
-        console.log("Page does not exist.");
+        return "Page does not exist.";
     }
   };
 
-  if (loading) return "Loading...";
+  if (loading) return <Spinner />;
   if (error) return <Error error={error} />;
 
   const handleDetailView = (e) => {

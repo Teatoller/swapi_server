@@ -19,8 +19,20 @@ body {
 span.page-align {
   align-items: center;
   display: inline;
-  /* margin: 4px; */
-  /* padding: 4px; */
+}
+
+.spinner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  outline: none;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  outline: none;
 }
 
 #footer {
