@@ -5,11 +5,8 @@
 - The application may be view at [Swapi-App](https://yeuxx.csb.app/)
 
 [![Build Status](https://travis-ci.org/Teatoller/swapi_server.svg?branch=develop)](https://travis-ci.org/Teatoller/swapi_server)
-
-<p align="center">
 <a href="https://codeclimate.com/github/Teatoller/swapi_server/maintainability"><img src="https://api.codeclimate.com/v1/badges/1febb137158335774a5b/maintainability" /></a>
 <a href="https://codeclimate.com/github/Teatoller/swapi_server/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1febb137158335774a5b/test_coverage" /></a>
-</p>
 
 ## Application can be view on codesandbox
 
