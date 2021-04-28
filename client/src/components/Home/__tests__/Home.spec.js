@@ -2,7 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import {Home} from "../Home";
 
-describe("AdminDisplay", () => {
+describe("Home", () => {
   it("snapshot renders correctly", () => {
     const component = renderer.create(<Home />);
     const tree = component.toJSON();
