@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../css/style.css";
+// import "../../css/style.css";
 import { useQuery, gql } from "@apollo/client";
 import HomeNav from "../common/HomeNav";
 import Footer from "../common/Footer";
