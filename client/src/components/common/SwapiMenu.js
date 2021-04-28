@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 export const SwapiMenu = (props) => {
   const { searchSpace } = props;
@@ -15,9 +14,5 @@ export const SwapiMenu = (props) => {
       </div>
     </>
   );
-};
-SwapiMenu.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  searchSpace: PropTypes.func.isRequired,
 };
 export default SwapiMenu;
