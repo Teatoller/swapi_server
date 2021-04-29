@@ -15,9 +15,20 @@ const typeDefs = gql`
     gender: String!
     homeworld: String!
   }
+  type Person {
+    Results: [Results]
+  }
+  type Results {
+    name: String
+    height: Int
+    mass: String
+    gender: String
+    homeworld: String
+  }
   # queries
   type Query {
     people(page: String!): People
+    person(name: String): Person
   }
 `;
 

@@ -5,7 +5,8 @@ const typeDefs = require("./schema");
 // schema.
 const resolvers = require("./resolver");
 
-const SwapiAPI = require("./datasource");
+const SwapiAPI = require("./datasource/peoplesource");
+const PersonAPI = require("./datasource/personsource");
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
@@ -16,6 +17,7 @@ const server = new ApolloServer({
   dataSources: () => {
     return {
       swapiAPI: new SwapiAPI(),
+      personAPI: new PersonAPI(),
     };
   },
 });
