@@ -6,13 +6,13 @@ export const HomeView = ({ stars, searchSpace }) => {
     <>
       <div className="row">
         <div className="col-sm">
-          <h6 className="text-secondary m-0">Star Wars People</h6>
+          <h4 className="text-secondary m-0">Star Wars People</h4>
           <div className="mb-1">
             <SwapiMenu searchSpace={searchSpace} />
           </div>
 
           <div className="table-responsive">
-            <table className="table table-sm table-md table-striped table-hover table-bordered text-secondary mb-0">
+            <table className="table table-sm table-md table-striped table-hover table-bordered text-secondary">
               <thead>
                 <tr>
                   <th>#</th>

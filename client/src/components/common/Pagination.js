@@ -8,7 +8,7 @@ const Pagination = ({
 }) => {
   return (
     <>
-      <nav aria-label="Page navigation">
+      <nav aria-label="Page navigation mb-5">
         <ul className="pagination pagination-sm justify-content-center">
           <li className="page-item">
             <button
