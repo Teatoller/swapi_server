@@ -4,6 +4,7 @@ import HomeNav from "../../common/HomeNav";
 import Error from "../../../errorHandling/Error";
 import Spinner from "../../Spinner/Spinner";
 import SwapiMenu from "./SwapiMenu/SwapiMenu";
+import Pagination from "../../common/Pagination/Pagination";
 
 export const HomeView = ({
   setPeoplePage,
@@ -16,91 +17,6 @@ export const HomeView = ({
   props,
   peoplePage,
 }) => {
-  // const searchSpace = (event) => {
-  //   const keyword = event.target.value;
-  //   setSearch(keyword);
-  // };
-
-  // const handleSearchSpace = (event) => {
-  //   event.preventDefault();
-  //   const keyword = event.target.value;
-  //   setPersonName(keyword);
-  // };
-
-  const handleNextPageChange = (e) => {
-    e.preventDefault();
-    let newUrl = JSON.stringify(data.people.next);
-    let nextPageInt = newUrl.charAt(newUrl.length - 2);
-    let nextPageStr = nextPageInt.toString();
-
-    switch (nextPageStr) {
-      case "1":
-        setPeoplePage(nextPageStr);
-        break;
-      case "2":
-        setPeoplePage(nextPageStr);
-        break;
-      case "3":
-        let newNextPage = (parseInt(nextPageStr, 10) + 1).toString();
-        setPeoplePage(newNextPage);
-        break;
-      case "4":
-        setPeoplePage(nextPageStr);
-        break;
-      case "5":
-        setPeoplePage(nextPageStr);
-        break;
-      case "6":
-        setPeoplePage(nextPageStr);
-        break;
-      case "7":
-        setPeoplePage(nextPageStr);
-        break;
-      case "8":
-        setPeoplePage(nextPageStr);
-        break;
-      default:
-        console.log("Page does not exist.");
-    }
-  };
-
-  const handlePreviousPageChange = (e) => {
-    e.preventDefault();
-    let newUrl = JSON.stringify(data.people.previous);
-    let previousPageInt = newUrl.charAt(newUrl.length - 2);
-    let previousPageStr = previousPageInt.toString();
-
-    switch (previousPageStr) {
-      case "1":
-        setPeoplePage(previousPageStr);
-        break;
-      case "2":
-        setPeoplePage(previousPageStr);
-        break;
-      case "3":
-        let newPreviousPage = (parseInt(previousPageStr, 10) - 1).toString();
-        setPeoplePage(newPreviousPage);
-        break;
-      case "4":
-        setPeoplePage(previousPageStr);
-        break;
-      case "5":
-        setPeoplePage(previousPageStr);
-        break;
-      case "6":
-        setPeoplePage(previousPageStr);
-        break;
-      case "7":
-        setPeoplePage(previousPageStr);
-        break;
-      case "8":
-        setPeoplePage(previousPageStr);
-        break;
-      default:
-        return "Page does not exist.";
-    }
-  };
-
   const handleDetailView = (e) => {
     const { history } = props;
 
@@ -214,36 +130,11 @@ export const HomeView = ({
             )}
           </div>
         </div>
-
-        <nav aria-label="Page navigation example ">
-          <ul className="pagination position-relative justify-content-center mb-5">
-            <li className="page-item">
-              <button
-                type="button"
-                onClick={handlePreviousPageChange}
-                className="page-link"
-                aria-label="Previous"
-              >
-                <span aria-hidden="true">&laquo;</span>
-              </button>
-            </li>
-            <li className="page-item">
-              <button type="button" className="page-link">
-                {peoplePage}
-              </button>
-            </li>
-            <li className="page-item">
-              <button
-                type="button"
-                onClick={handleNextPageChange}
-                className="page-link"
-                aria-label="Next"
-              >
-                <span aria-hidden="true">&raquo;</span>
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <Pagination
+          data={data}
+          setPeoplePage={setPeoplePage}
+          peoplePage={peoplePage}
+        />
       </div>
       <Footer />
     </>
