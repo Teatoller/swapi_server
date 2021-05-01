@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../common/Footer";
-import HomeNav from "../common/HomeNav";
+import Footer from "../common/Footer/Footer";
+import HomeNav from "../common/HomeNav/HomeNav";
+import StarDetailView from "./StarDetailView/StarDetailView";
 
 export const StarDetails = () => {
   const [name, setName] = useState("");
@@ -30,66 +31,14 @@ export const StarDetails = () => {
   return (
     <div>
       <HomeNav />
-      
-      <div className="container px-lg-5">
-      <h1>Star Profile</h1>
-      <div className="row mx-lg-n5">
-          <div className="col py-3 px-lg-5 border bg-light">
-            Description
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            Details
-          </div>
-        </div>
-
-        <div className="row mx-lg-n5">
-          <div className="col py-3 px-lg-5 border bg-light">
-            Name:
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            {name}
-          </div>
-        </div>
-
-        <div className="row mx-lg-n5">
-          <div className="col py-3 px-lg-5 border bg-light">
-            Height:
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            {height}
-          </div>
-        </div>
-
-        <div className="row mx-lg-n5">
-          <div className="col py-3 px-lg-5 border bg-light">
-            Mass:
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            {mass}
-          </div>
-        </div>
-
-        <div className="row mx-lg-n5">
-          <div className="col py-3 px-lg-5 border bg-light">
-            Gender:
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            {gender}
-          </div>
-        </div>
-
-        <div className="row mx-lg-n5">
-          <div className="col py-3 px-lg-5 border bg-light">
-            Homeworld:
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-          <a href={homeworld} target="_blank" rel="noreferrer">
-              {homeworld}
-            </a>
-          </div>
-        </div>
-      </div>
-      <Footer/>
+      <StarDetailView
+        name={name}
+        height={height}
+        mass={mass}
+        gender={gender}
+        homeworld={homeworld}
+      />
+      <Footer />
     </div>
   );
 };

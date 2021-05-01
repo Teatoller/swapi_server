@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../css/style.css";
 
 const activeStyle = { color: "#f0a243" };
 const logoUrl = `./img/swapi.svg`;

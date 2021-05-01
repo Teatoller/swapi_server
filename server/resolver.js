@@ -4,5 +4,7 @@ module.exports = {
   Query: {
     people: (_, { page }, { dataSources }) =>
       dataSources.swapiAPI.getPeople({ page }),
+    person: (_, { name }, { dataSources }) =>
+      dataSources.personAPI.getPerson({ name }),
   },
 };

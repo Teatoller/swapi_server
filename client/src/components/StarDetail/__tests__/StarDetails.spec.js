@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import {HomeView} from "../HomeView";
+import {StarDetails} from "../StarDetails";
 
-describe("HomeView", () => {
+describe("StarDetails", () => {
   it.skip("snapshot renders correctly", () => {
-    const component = renderer.create(<HomeView />);
+    const component = renderer.create(<StarDetails/>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

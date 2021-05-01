@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import {HomeView} from "../HomeView";
+import PeopleQueryView from "../PeopleQueryView";
 
-describe("HomeView", () => {
+describe("PeopleQueryView", () => {
   it.skip("snapshot renders correctly", () => {
-    const component = renderer.create(<HomeView />);
+    const component = renderer.create(<PeopleQueryView/>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

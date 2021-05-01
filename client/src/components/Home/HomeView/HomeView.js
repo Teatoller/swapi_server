@@ -1,34 +1,45 @@
 import React from "react";
-import SwapiMenu from "../../common/SwapiMenu";
+import Footer from "../../common/Footer/Footer";
+import HomeNav from "../../common/HomeNav/HomeNav";
+import SwapiMenu from "./SwapiMenu/SwapiMenu";
+import Pagination from "../../common/Pagination/Pagination";
+import PeopleQuery from "./PeopleQuery/PeopleQuery";
 
-export const HomeView = ({ stars, searchSpace }) => {
+export const HomeView = ({
+  setPeoplePage,
+  setPersonName,
+  search,
+  setSearch,
+  loading,
+  error,
+  data,
+  props,
+  peoplePage,
+}) => {
   return (
     <>
-      <div className="row">
-        <div className="col-sm">
-          <h6 className="text-secondary m-0">Star Wars People</h6>
-          <div className="mb-1">
-            <SwapiMenu searchSpace={searchSpace} />
-          </div>
-
-          <div className="table-responsive">
-            <table className="table table-sm table-md table-striped table-hover table-bordered text-secondary mb-0">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Height</th>
-                  <th scope="col">Mass</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Homeworld</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>{stars}</tbody>
-            </table>
+      <HomeNav />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <h4 className="text-secondary mt-1 mb-0">Star Wars People</h4>
+            <SwapiMenu setSearch={setSearch} setPersonName={setPersonName} />
+            <PeopleQuery
+              props={props}
+              error={error}
+              loading={loading}
+              data={data}
+              search={search}
+            />
           </div>
         </div>
+        <Pagination
+          data={data}
+          setPeoplePage={setPeoplePage}
+          peoplePage={peoplePage}
+        />
       </div>
+      <Footer />
     </>
   );
 };
