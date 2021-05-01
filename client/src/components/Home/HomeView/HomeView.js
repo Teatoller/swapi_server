@@ -1,7 +1,6 @@
 import React from "react";
-import Footer from "../../common/Footer";
-import HomeNav from "../../common/HomeNav";
-
+import Footer from "../../common/Footer/Footer";
+import HomeNav from "../../common/HomeNav/HomeNav";
 import SwapiMenu from "./SwapiMenu/SwapiMenu";
 import Pagination from "../../common/Pagination/Pagination";
 import PeopleQuery from "./PeopleQuery/PeopleQuery";

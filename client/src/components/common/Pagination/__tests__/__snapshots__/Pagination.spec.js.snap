@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination snapshot renders correctly 1`] = `
+<nav
+  aria-label="Page navigation example "
+>
+  <ul
+    className="pagination position-relative justify-content-center mb-5"
+  >
+    <li
+      className="page-item"
+    >
+      <button
+        aria-label="Previous"
+        className="page-link"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+        >
+          «
+        </span>
+      </button>
+    </li>
+    <li
+      className="page-item"
+    >
+      <button
+        className="page-link"
+        type="button"
+      />
+    </li>
+    <li
+      className="page-item"
+    >
+      <button
+        aria-label="Next"
+        className="page-link"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+        >
+          »
+        </span>
+      </button>
+    </li>
+  </ul>
+</nav>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer snapshot renders correctly 1`] = `
+<footer
+  className="mx-auto text-center text-warning border-top border-warning"
+  id="footer"
+>
+  <span>
+     
+    2021
+    ©Swapi
+  </span>
+</footer>
+`;
