@@ -1,7 +1,6 @@
 import React from "react";
 
-const Footer = () => {
-  return (
+const Footer = () => (
     <footer
       id="footer"
       className="mx-auto text-center text-warning border-top border-warning"
@@ -9,6 +8,5 @@ const Footer = () => {
       <span> {new Date().getFullYear()}&copy;Swapi</span>
     </footer>
   );
-};
 
 export default Footer;

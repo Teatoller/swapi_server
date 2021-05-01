@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Footer from "../../common/Footer/Footer";
-import HomeNav from "../../common/HomeNav/HomeNav";
-import SwapiMenu from "./SwapiMenu/SwapiMenu";
-import Pagination from "../../common/Pagination/Pagination";
-import PeopleQuery from "./PeopleQuery/PeopleQuery";
+import {HomeNav} from "../../common/HomeNav/HomeNav";
+import {SwapiMenu} from "./SwapiMenu/SwapiMenu";
+import {Pagination} from "../../common/Pagination/Pagination";
+import {PeopleQuery} from "./PeopleQuery/PeopleQuery";
 
 export const HomeView = ({
   setPeoplePage,
@@ -15,8 +16,7 @@ export const HomeView = ({
   data,
   props,
   peoplePage,
-}) => {
-  return (
+}) => (
     <>
       <HomeNav />
       <div className="container">
@@ -42,5 +42,15 @@ export const HomeView = ({
       <Footer />
     </>
   );
-};
+  HomeView.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    setPeoplePage: PropTypes.func.isRequired,
+    setPersonName: PropTypes.func.isRequired,
+    search: PropTypes.string.isRequired,
+    setSearch: PropTypes.bool.isRequired,
+    peoplePage: PropTypes.string.isRequired,
+    error: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(PropTypes.number).isRequired,
+    props: PropTypes.shape().isRequired
+  };
 export default HomeView;

@@ -1,11 +1,11 @@
+/* eslint-disable max-len */
 import React from "react";
 import { NavLink } from "react-router-dom";
 
 const activeStyle = { color: "#f0a243" };
 const logoUrl = `./img/swapi.svg`;
 
-export const HomeNav = () => {
-  return (
+export const HomeNav = () => (
     <nav className="navbar navbar-expand-sm navbar-expand-lg navbar-light navshade border-bottom border-warning">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
@@ -33,16 +33,15 @@ export const HomeNav = () => {
           <ul className="navbar-nav text-capitalize ml-auto">
             <li className="nav-item active">
               <NavLink className="nav-link" activeStyle={activeStyle} to="/">
-              <i class="bi bi-house-door"  aria-label="Home"> Home</i>
+              <i className="bi bi-house-door"  aria-label="Home"> Home</i>
                 <span className="sr-only">(current)</span>
               </NavLink>
             </li>
 
-            <li className="nav-item dropdown"></li>
+            <li className="nav-item dropdown" />
           </ul>
         </div>
       </div>
     </nav>
   );
-};
 export default HomeNav;

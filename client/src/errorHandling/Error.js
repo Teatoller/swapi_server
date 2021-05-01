@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Error404 = ({ error }) => {
-  return (
+const Error404 = ({ error }) => (
     <>
       <div className="alert alert-danger">
         <h3>Oops!!!</h3>
@@ -10,5 +10,7 @@ const Error404 = ({ error }) => {
       </div>
     </>
   );
-};
+  Error404.propTypes = {
+    error: PropTypes.string.isRequired,
+  };
 export default Error404;

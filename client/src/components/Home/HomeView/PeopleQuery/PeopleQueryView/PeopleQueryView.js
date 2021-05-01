@@ -1,5 +1,8 @@
+/* eslint-disable max-len */
+import React from "react";
+import PropTypes from "prop-types";
 import Error from "../../../../../errorHandling/Error";
-import PeopleQueryFunc from "./PeopleQueryFunc/PeopleQueryFunc";
+import {PeopleQueryFunc} from "./PeopleQueryFunc/PeopleQueryFunc";
 
 export const PeopleQueryView = ({
   error,
@@ -7,8 +10,7 @@ export const PeopleQueryView = ({
   data,
   search,
   handleDetailView,
-}) => {
-  return (
+}) => (
     <>
       {error ? (
         <Error error={error} />
@@ -39,5 +41,11 @@ export const PeopleQueryView = ({
       )}
     </>
   );
-};
+  PeopleQueryView.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    search: PropTypes.string.isRequired,
+    error: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(PropTypes.number).isRequired,
+    handleDetailView: PropTypes.func.isRequired,
+  };
 export default PeopleQueryView;

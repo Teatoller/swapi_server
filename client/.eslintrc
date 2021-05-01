@@ -1,0 +1,76 @@
+{
+    "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:react-hooks/recommended"
+    ],
+    "plugins": [
+    "prettier",
+    "react-hooks"
+    ],
+    "rules": {
+    "react/jsx-filename-extension": [
+    1,
+    {
+    "extensions": [
+    ".js",
+    ".jsx"
+    ]
+    }
+    ],
+    "react/prop-types": [
+    "warn"
+    ],
+    "no-underscore-dangle": [
+    "error",
+    {
+    "allow": [
+    "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"
+    ]
+    }
+    ],
+    "import/imports-first": [
+    "error",
+    "absolute-first"
+    ],
+    "import/newline-after-import": "error",
+    "import/prefer-default-export": 0,
+    "semi": "error",
+    "max-len": [
+    "error",
+    {
+    "code": 100
+    }
+    ],
+    "prefer-promise-reject-errors": [
+    "off"
+    ],
+    "no-return-assign": [
+    "off"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+    },
+    "env": {
+    "browser": true,
+    "jest": true
+    },
+    "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true,
+    "Headers": true,
+    "Request": true,
+    "fetch": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+    }
+}

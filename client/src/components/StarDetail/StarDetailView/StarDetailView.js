@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const StarDetailView = ({ name, height, mass, gender, homeworld }) => {
-  return (
+export const StarDetailView = ({ name, height, mass, gender, homeworld }) => (
     <>
       <div className="container px-lg-5">
         <h4 className="text-secondary mt-1 mb-0">Star Profile</h4>
@@ -55,5 +55,11 @@ export const StarDetailView = ({ name, height, mass, gender, homeworld }) => {
       </div>
     </>
   );
-};
+  StarDetailView.propTypes = {
+    name: PropTypes.bool.isRequired,
+    height: PropTypes.string.isRequired,
+    mass: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    homeworld: PropTypes.string.isRequired,
+  };
 export default StarDetailView;

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import SwapiMenu from "../SwapiMenu";
+import {SwapiMenu} from "../SwapiMenu";
 
 describe("SwapiMenu", () => {
   it("snapshot renders correctly", () => {

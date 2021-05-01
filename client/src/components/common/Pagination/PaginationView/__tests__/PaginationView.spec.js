@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PaginationView from "../PaginationView";
+import {PaginationView} from "../PaginationView";
 
 describe("PaginationView", () => {
   it("snapshot renders correctly", () => {

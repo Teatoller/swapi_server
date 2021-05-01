@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./css/style.css";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from "./App";
+import "./css/style.css";
 import reportWebVitals from "./reportWebVitals";
 
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import ErrorBoundary from "./errorHandling/ErrorBoundary";
 
 const client = new ApolloClient({

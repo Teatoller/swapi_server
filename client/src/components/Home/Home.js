@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
-import HomeView from "./HomeView/HomeView";
+import {HomeView} from "./HomeView/HomeView";
 
 export const PEOPLE_PERSON_DATA = gql`
   query Query($peoplePage: String!, $personName: String) {
