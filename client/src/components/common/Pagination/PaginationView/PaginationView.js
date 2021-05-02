@@ -1,11 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const PaginationView = ({
   handlePreviousPageChange,
   handleNextPageChange,
   peoplePage,
-}) => {
-  return (
+}) => (
     <nav aria-label="Page navigation example ">
       <ul className="pagination position-relative justify-content-center mb-5">
         <li className="page-item">
@@ -36,5 +36,9 @@ export const PaginationView = ({
       </ul>
     </nav>
   );
-};
+  PaginationView.propTypes = {
+    handlePreviousPageChange: PropTypes.func.isRequired,
+    handleNextPageChange: PropTypes.func.isRequired,
+    peoplePage: PropTypes.string.isRequired,
+  };
 export default PaginationView;

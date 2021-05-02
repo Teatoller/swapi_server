@@ -8,7 +8,7 @@ exports[`SwapiMenuView snapshot renders correctly 1`] = `
     className="d-inline p-1 bg-light text-white"
   >
     <form
-      class="form-inline my-2 my-lg-0"
+      className="form-inline my-2 my-lg-0"
     >
       <input
         className="border border-info rounded w-25 text-muted text-center"

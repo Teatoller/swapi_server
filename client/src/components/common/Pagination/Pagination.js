@@ -1,12 +1,15 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-case-declarations */
 import React from "react";
-import PaginationView from "./PaginationView/PaginationView";
+import PropTypes from "prop-types";
+import {PaginationView} from "./PaginationView/PaginationView";
 
-const Pagination = ({ data, setPeoplePage, peoplePage }) => {
+export const Pagination = ({ data, setPeoplePage, peoplePage }) => {
   const handleNextPageChange = (e) => {
     e.preventDefault();
-    let newUrl = JSON.stringify(data.people.next);
-    let nextPageInt = newUrl.charAt(newUrl.length - 2);
-    let nextPageStr = nextPageInt.toString();
+    const newUrl = JSON.stringify(data.people.next);
+    const nextPageInt = newUrl.charAt(newUrl.length - 2);
+    const nextPageStr = nextPageInt.toString();
 
     switch (nextPageStr) {
       case "1":
@@ -16,7 +19,7 @@ const Pagination = ({ data, setPeoplePage, peoplePage }) => {
         setPeoplePage(nextPageStr);
         break;
       case "3":
-        let newNextPage = (parseInt(nextPageStr, 10) + 1).toString();
+        const newNextPage = (parseInt(nextPageStr, 10) + 1).toString();
         setPeoplePage(newNextPage);
         break;
       case "4":
@@ -35,15 +38,15 @@ const Pagination = ({ data, setPeoplePage, peoplePage }) => {
         setPeoplePage(nextPageStr);
         break;
       default:
-        console.log("Page does not exist.");
+        return ("Page does not exist.");
     }
   };
 
   const handlePreviousPageChange = (e) => {
     e.preventDefault();
-    let newUrl = JSON.stringify(data.people.previous);
-    let previousPageInt = newUrl.charAt(newUrl.length - 2);
-    let previousPageStr = previousPageInt.toString();
+    const newUrl = JSON.stringify(data.people.previous);
+    const previousPageInt = newUrl.charAt(newUrl.length - 2);
+    const previousPageStr = previousPageInt.toString();
 
     switch (previousPageStr) {
       case "1":
@@ -53,7 +56,7 @@ const Pagination = ({ data, setPeoplePage, peoplePage }) => {
         setPeoplePage(previousPageStr);
         break;
       case "3":
-        let newPreviousPage = (parseInt(previousPageStr, 10) - 1).toString();
+        const newPreviousPage = (parseInt(previousPageStr, 10) - 1).toString();
         setPeoplePage(newPreviousPage);
         break;
       case "4":
@@ -84,5 +87,10 @@ const Pagination = ({ data, setPeoplePage, peoplePage }) => {
       />
     </>
   );
+};
+Pagination.propTypes = {
+  setPeoplePage: PropTypes.func.isRequired,
+  peoplePage: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 export default Pagination;

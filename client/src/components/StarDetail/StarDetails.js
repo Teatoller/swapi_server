@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../common/Footer/Footer";
-import HomeNav from "../common/HomeNav/HomeNav";
-import StarDetailView from "./StarDetailView/StarDetailView";
+import {HomeNav} from "../common/HomeNav/HomeNav";
+import {StarDetailView} from "./StarDetailView/StarDetailView";
 
 export const StarDetails = () => {
   const [name, setName] = useState("");

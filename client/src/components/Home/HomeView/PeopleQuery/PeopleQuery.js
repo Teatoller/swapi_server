@@ -1,5 +1,6 @@
 import React from "react";
-import PeopleQueryView from "./PeopleQueryView/PeopleQueryView";
+import PropTypes from "prop-types";
+import {PeopleQueryView} from "./PeopleQueryView/PeopleQueryView";
 
 export const PeopleQuery = ({ props, error, loading, data, search }) => {
   const handleDetailView = (e) => {
@@ -31,5 +32,13 @@ export const PeopleQuery = ({ props, error, loading, data, search }) => {
       />
     </>
   );
+};
+PeopleQuery.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  search: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(PropTypes.number).isRequired,
+  history: PropTypes.shape().isRequired,
+  props: PropTypes.shape().isRequired,
 };
 export default PeopleQuery;

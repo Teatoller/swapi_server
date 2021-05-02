@@ -1,5 +1,6 @@
 import React from "react";
-import SwapiMenuView from "./SwapiMenuView/SwapiMenuView";
+import PropTypes from "prop-types";
+import {SwapiMenuView} from "./SwapiMenuView/SwapiMenuView";
 
 export const SwapiMenu = ({ setSearch, setPersonName }) => {
   const searchSpace = (event) => {
@@ -20,5 +21,9 @@ export const SwapiMenu = ({ setSearch, setPersonName }) => {
       />
     </>
   );
+};
+SwapiMenu.propTypes = {
+  setPersonName: PropTypes.func.isRequired,
+  setSearch: PropTypes.bool.isRequired,
 };
 export default SwapiMenu;

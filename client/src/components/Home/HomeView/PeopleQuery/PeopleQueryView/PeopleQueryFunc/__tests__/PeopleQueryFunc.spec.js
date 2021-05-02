@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PeopleQueryFunc from "../PeopleQueryFunc";
+import {PeopleQueryFunc} from "../PeopleQueryFunc";
 
 describe("PeopleQueryFunc", () => {
   it.skip("snapshot renders correctly", () => {

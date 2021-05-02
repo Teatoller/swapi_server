@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PeopleQueryView from "../PeopleQueryView";
+import {PeopleQueryView} from "../PeopleQueryView";
 
 describe("PeopleQueryView", () => {
   it.skip("snapshot renders correctly", () => {
