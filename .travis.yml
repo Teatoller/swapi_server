@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "stable"
+before_install:
+  - npm install
+install:
+  - cd client && npm install
+cache:
+  npm: true
+  directories:
+    - client/node_modules
+script:
+  - cd client && npm run pretest
+  - npm run test -- --coverage
+  - cd client && npm run build
