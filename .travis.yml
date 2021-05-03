@@ -3,14 +3,16 @@ node_js:
   - "stable"
 cache:
 directories:
-  - client/node_modules
+  - travis cache --delete
+  - clients/node_modules
 before_install:
   - npm install
 install:
   - cd client && npm install
 cache:
-  npm: true
+  npm: false
   directories:
+    - travis cache --delete
     - client/node_modules
 script:
   - npm run pretest
