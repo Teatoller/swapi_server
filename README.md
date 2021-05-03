@@ -39,7 +39,7 @@
 This runs the app in the development mode.<br />
 Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
-### Client side
+### Client Side
 
 1. Open a new terminal tab at the `swapi_server` folder.
 2. Follow the **Steps 1-5** _as in server side_ **ONLY** if you have not already done so.
