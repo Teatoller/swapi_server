@@ -1,54 +1,70 @@
-# Apollo GraphQL API Server
+# Getting Started with Client App
 
-- This a server application that fetches data from the "Star Wars API.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- The application may be view at [Swapi-App](https://yeuxx.csb.app/)
+## Available Scripts
 
-[![Build Status](https://travis-ci.org/Teatoller/swapi_server.svg?branch=develop)](https://travis-ci.org/Teatoller/swapi_server)
-<a href="https://codeclimate.com/github/Teatoller/swapi_server/maintainability"><img src="https://api.codeclimate.com/v1/badges/1febb137158335774a5b/maintainability" /></a>
-<a href="https://codeclimate.com/github/Teatoller/swapi_server/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1febb137158335774a5b/test_coverage" /></a>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+In the project directory, you can run:
 
-## Application can be view on codesandbox
+### `yarn start`
 
-1. [Pivotal Tracker board](https://www.pivotaltracker.com/projects/2496277)
-2. [CodeSandbox frontend](https://codesandbox.io/s/swapi-frontstevenennis-yeuxx)
-3. [CodeSanbox server](https://codesandbox.io/s/swapi-serverstevenennis-zll44)
-
-## Prerequisites
-
--Before we begin, make sure you have the following installed:
-
-- node.js v8.x or later
-- npm v6.x or later
-- git v2.14.1 or later
-
-## How to test the application
-
-### Server
-
-1. Create a folder on your machine `mkdir myproject`
-2. `cd myproject`
-3. Run `git clone https://github.com/Teatoller/swapi_server.git`
-4. `cd swapi_server`
-5. open **swapi_server** in your chosen editor. For **vscode** enter `code .` on terminal and press enter.
-6. Run on the terminal `git checkout develop`
-7. On the terminal run `npm install`
-8. To start the server on the terminal run `npm run start-server`
-9. Alternatively run on the terminal `node server/index.js`
-
-This runs the app in the development mode.<br />
-Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
-
-### Client side
-
-1. Open a new terminal tab at the `swapi_server` folder.
-2. Follow the **Steps 1-5** _as in server side_ **ONLY** if you have not already done so.
-3. Run on the terminal `git checkout develop/client`
-4. On the terminal run `npm install`
-5. To start the server on the terminal run `npm start`
-
-This runs the app in the development mode.<br />
+Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 ### `yarn test`
-6. On the terminal run `npm test -- --coverage`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
