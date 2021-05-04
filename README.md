@@ -4,6 +4,7 @@
 
 - The application may be viewed at the url link [Swapi-App](https://yeuxx.csb.app/)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4366eab95dbc4cd19907dcbf1be92b6d)](https://app.codacy.com/gh/Teatoller/swapi_server?utm_source=github.com&utm_medium=referral&utm_content=Teatoller/swapi_server&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/Teatoller/swapi_server.svg?branch=develop)](https://travis-ci.org/Teatoller/swapi_server)
 <a href="https://codeclimate.com/github/Teatoller/swapi_server/maintainability"><img src="https://api.codeclimate.com/v1/badges/1febb137158335774a5b/maintainability" /></a>
 <a href="https://codeclimate.com/github/Teatoller/swapi_server/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1febb137158335774a5b/test_coverage" /> </a>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
