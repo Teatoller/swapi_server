@@ -27,7 +27,6 @@ jobs:
           name: Run Test and Coverage
           command: |
             cd client && npm run pretest
-            npm run test -- --coverage
-      - run: #  Send coverage to Code Climate
-          command: |
-            ./cc-test-reporter after-build format-coverage -t lcov -p /coverage/lcov.info out --exit-code $?
+            npm run test
+            ./cc-test-reporter after-build format-coverage -t lcov -p client/coverage/lcov.info out --exit-code $?
+            
