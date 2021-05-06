@@ -11,34 +11,11 @@ export const Pagination = ({ data, setPeoplePage, peoplePage }) => {
     const nextPageInt = newUrl.charAt(newUrl.length - 2);
     const nextPageStr = nextPageInt.toString();
 
-    switch (nextPageStr) {
-      case "1":
-        setPeoplePage(nextPageStr);
-        break;
-      case "2":
-        setPeoplePage(nextPageStr);
-        break;
-      case "3":
-        const newNextPage = (parseInt(nextPageStr, 10) + 1).toString();
+    if(nextPageStr === "3"){
+      const newNextPage = (parseInt(nextPageStr, 10) + 1).toString();
         setPeoplePage(newNextPage);
-        break;
-      case "4":
-        setPeoplePage(nextPageStr);
-        break;
-      case "5":
-        setPeoplePage(nextPageStr);
-        break;
-      case "6":
-        setPeoplePage(nextPageStr);
-        break;
-      case "7":
-        setPeoplePage(nextPageStr);
-        break;
-      case "8":
-        setPeoplePage(nextPageStr);
-        break;
-      default:
-        return ("Page does not exist.");
+    } else if(nextPageStr <= "8") {
+      setPeoplePage(nextPageStr);
     }
   };
 
@@ -48,34 +25,11 @@ export const Pagination = ({ data, setPeoplePage, peoplePage }) => {
     const previousPageInt = newUrl.charAt(newUrl.length - 2);
     const previousPageStr = previousPageInt.toString();
 
-    switch (previousPageStr) {
-      case "1":
-        setPeoplePage(previousPageStr);
-        break;
-      case "2":
-        setPeoplePage(previousPageStr);
-        break;
-      case "3":
-        const newPreviousPage = (parseInt(previousPageStr, 10) - 1).toString();
+    if(previousPageStr === "3"){
+      const newPreviousPage = (parseInt(previousPageStr, 10) - 1).toString();
         setPeoplePage(newPreviousPage);
-        break;
-      case "4":
-        setPeoplePage(previousPageStr);
-        break;
-      case "5":
-        setPeoplePage(previousPageStr);
-        break;
-      case "6":
-        setPeoplePage(previousPageStr);
-        break;
-      case "7":
-        setPeoplePage(previousPageStr);
-        break;
-      case "8":
-        setPeoplePage(previousPageStr);
-        break;
-      default:
-        return "Page does not exist.";
+    } else if(previousPageStr <= "8") {
+      setPeoplePage(previousPageStr);
     }
   };
   return (
