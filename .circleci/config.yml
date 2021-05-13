@@ -1,33 +1,35 @@
-version: 2
+version: 2.1
+
 jobs:
-  build:
-    environment:
-    CC_TEST_REPORTER_ID: 6c601813d98c22657b50d53d3899ca8402fd611cb7001917ae4931fc263027da
+  test:
     docker:
-      - image: circleci/node:11.9.0
-    working_directory: ~/swapi_server/client
+      - image: cimg/node:15.1
+    working_directory: ~/swapi_server/
     steps:
       - checkout
-      - restore_cache: # special step to restore the dependency cache
-          key: dependency-cache-{{ checksum "client/package.json" }}
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "client/package.json"}}
       - run:
-          name: Setup Dependencies
+          name: install packages
           command: cd client && npm install
-      - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-            ./cc-test-reporter before-build
-      - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "client/package.json" }}
+      - save_cache:
+          key: node-deps-v1-{{ .Branch }}-{{checksum "client/package.json"}}
           paths:
+            # - ~ cd client && /.npm
             - client/node_modules
-      - run: # run tests now
-          name: Run Test and Coverage
+      - run: # run pretests now
+          name: Run Pretest
           command: |
             cd client && npm run pretest
-            npm run test -- --coverage
-      - run: #  Send coverage to Code Climate
+      - run: # run tests now
+          name: Run Test
           command: |
-            ./cc-test-reporter after-build format-coverage -t lcov -p /coverage/lcov.info out --exit-code $?
+            cd client && npm test
+workflows:
+  orb-free-workflow:
+    jobs:
+      - test
+notifications: email:false

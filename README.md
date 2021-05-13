@@ -51,4 +51,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
 
-6. On the terminal run `npm test -- --coverage`
+6. On the terminal run `npm test`
