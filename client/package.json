@@ -24,6 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "npm test -- --coverage --watchAll=false",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "eject": "react-scripts eject",
     "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix",
     "precommit": "lint-staged"
@@ -63,7 +65,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged npm run pretest"
+      "pre-commit": "npm run lint && npm run pretest && npm run coverage"
     }
   },
   "lint-staged": {
@@ -72,5 +74,33 @@
       "eslint src/ --fix",
       "git add"
     ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "text",
+      "html",
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*/*.d.ts",
+      "!src/**/*/Loadable.{js,jsx,ts,tsx}",
+      "!src/**/*/types.ts",
+      "!src/**/store.ts",
+      "!src/index.tsx",
+      "!src/serviceWorker.ts",
+      "!<rootDir>/node_modules/",
+      "!**/templates/**",
+      "!**/template/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 15,
+        "lines": 15,
+        "statements": 15
+      }
+    }
   }
 }
