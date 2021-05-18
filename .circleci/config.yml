@@ -27,7 +27,11 @@ jobs:
       - run: # run tests now
           name: Run Test
           command: |
-            cd client && npm test
+            cd client && npm run coverage
+      - run: # run coveralls now
+          name: Run Coveralls
+          command: |
+            cd client && npm run coveralls
 workflows:
   orb-free-workflow:
     jobs:
