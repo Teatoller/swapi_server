@@ -1,13 +1,13 @@
 language: node_js
 node_js:
   - "stable"
+env:
+  global:
+    - CC_TEST_REPORTER_ID=6c601813d98c22657b50d53d3899ca8402fd611cb7001917ae4931fc263027da
 cache:
 directories:
   - travis cache --delete
   - clients/node_modules
-env:
-  global:
-    - CC_TEST_REPORTER_ID=6c601813d98c22657b50d53d3899ca8402fd611cb7001917ae4931fc263027da
 before_install:
   - npm install
 install:
@@ -27,7 +27,6 @@ script:
   - npm run build
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
 after_success: 
   - npm run coveralls
 notifications:
